@@ -1,18 +1,32 @@
-Source: adaptation-droidian-vayu
+Source: adaptation-xiaomi-vayu
 Maintainer: vacuumbeef
 Section: metapackages
 Priority: optional
-Build-Depends: debhelper (>= 10)
+Build-Depends: debhelper (>= 10),
 Standards-Version: 4.5.0.3
 
-Package: adaptation-droidian-vayu
-Architecture: all
+Package: adaptation-xiaomi-vayu
+Architecture: arm64
 Depends: ${misc:Depends},
+<<<<<<< HEAD
 Description: adaptation vayu deprecated
  replaced by adaptation-xiaomi-vayu
+=======
+         adaptation-hybris-api30-phone,
+         linux-bootimage-xiaomi-vayu,
+         adaptation-xiaomi-vayu-configs,
+	 wlr-randr,
+	 droidian-camera,
+	 gstreamer1.0-tools,
+Description: Community adaptation for xiaomi-vayu api30 - metapackage
+>>>>>>> 8e55fc1 (Upgrade: debian packaging files to "sparse dir" model)
 
-Package: adaptation-vayu-configs
-Architecture: all
+Package: adaptation-xiaomi-vayu-configs
+Architecture: arm64
 Depends: ${misc:Depends},
+<<<<<<< HEAD
 Description: adaptation configs vayu deprecated
  replaced by adaptation-xiaomi-vayu-configs
+=======
+Description: Droidian adaptation for Xiaomi Pocophone X3 Pro vayu api30 - adaptation configurations
+>>>>>>> 8e55fc1 (Upgrade: debian packaging files to "sparse dir" model)

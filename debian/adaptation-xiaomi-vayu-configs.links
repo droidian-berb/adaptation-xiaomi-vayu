@@ -1,0 +1,2 @@
+/usr/lib/adaptation-xiaomi-vayu/sources.list.d/community-xiaomi-vayu.list /etc/apt/sources.list.d/community-xiaomi-vayu.list
+/usr/lib/adaptation-xiaomi-vayu/trusted.gpg.d/community-xiaomi-vayu.gpg /etc/apt/trusted.gpg.d/community-xiaomi-vayu.gpg

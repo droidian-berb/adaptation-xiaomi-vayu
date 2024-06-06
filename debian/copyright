@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: adaptation-droidian-vayu
-Source: https://github.com/vacuumbeef/adaptation-droidian-vayu
+Upstream-Name: adaptation-xiaomi-vayu
+Source: https://github.com/droidian-vayu/adaptation-xiaomi-vayu
 
 Files: *
 Copyright: 2023 vacuumbeef <stresscult@disroot.org>
