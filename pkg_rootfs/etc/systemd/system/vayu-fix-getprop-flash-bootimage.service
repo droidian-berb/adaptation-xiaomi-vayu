@@ -1,0 +1,15 @@
+[Unit]
+Description=Patch getprop in flash-bootimage script
+Requires=lxc@android.service
+After=network.target
+Before=graphical.target
+
+[Service]
+Type=oneshot
+Environment=LAUNCHED_BY_SYSTEMD=1
+ExecStartPre=/bin/sleep 1
+ExecStart=/usr/bin/droidian-vayu-fix-flashboot
+RemainAfterExit=True
+
+[Install]
+WantedBy=multi-user.target
