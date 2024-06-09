@@ -14,7 +14,6 @@ Description: adaptation vayu deprecated
  replaced by adaptation-xiaomi-vayu
 =======
          adaptation-hybris-api30-phone,
-         linux-bootimage-xiaomi-vayu,
          adaptation-xiaomi-vayu-configs,
 	 wlr-randr,
 	 droidian-camera,
