@@ -1,0 +1,21 @@
+## Berbascum patterns
+backup-droidian-private-gpg-apt-xiaomi-vayu.tar.gz
+backup-droidian-adaptation-git-repo-xiaomi-vayu.tar.gz
+backup-droidian-adaptation-fresh-template-xiaomi-vayu.tar.gz
+droidian-build-tools
+test-dir
+out-adaptation-xiaomi-vayu
+
+## Debhelper output files
+!debian/adaptation-xiaomi-vayu.dirs
+!debian/adaptation-xiaomi-vayu.install
+!debian/adaptation-xiaomi-vayu.links
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/adaptation-xiaomi-vayu/
+debian/adaptation-xiaomi-vayu-configs/
+debian/adaptation-xiaomi-vayu.substvars
+debian/adaptation-vayu-configs.debhelper.log
+debian/adaptation-vayu-configs.postrm.debhelper
+debian/files
+
