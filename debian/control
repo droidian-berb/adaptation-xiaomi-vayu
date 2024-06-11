@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 10),
 Standards-Version: 4.5.0.3
 
 Package: adaptation-xiaomi-vayu
-Architecture: all
+Architecture: arm64
 Depends: ${misc:Depends},
 <<<<<<< HEAD
 Description: adaptation vayu deprecated
@@ -22,7 +22,7 @@ Description: Community adaptation for xiaomi-vayu api30 - metapackage
 >>>>>>> 8e55fc1 (Upgrade: debian packaging files to "sparse dir" model)
 
 Package: adaptation-xiaomi-vayu-configs
-Architecture: all
+Architecture: arm64
 Depends: ${misc:Depends},
 <<<<<<< HEAD
 Description: adaptation configs vayu deprecated
