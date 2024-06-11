@@ -5,6 +5,7 @@ backup-droidian-adaptation-fresh-template-xiaomi-vayu.tar.gz
 droidian-build-tools
 test-dir
 out-adaptation-xiaomi-vayu
+build-package-with-droidian-releng.sh
 
 ## Debhelper output files
 !debian/adaptation-xiaomi-vayu.dirs
@@ -15,6 +16,7 @@ debian/debhelper-build-stamp
 debian/adaptation-xiaomi-vayu/
 debian/adaptation-xiaomi-vayu-configs/
 debian/adaptation-xiaomi-vayu.substvars
+debian/adaptation-xiaomi-vayu-configs.substvars
 debian/adaptation-vayu-configs.debhelper.log
 debian/adaptation-vayu-configs.postrm.debhelper
 debian/files
