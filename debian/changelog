@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 adaptation-droidian-vayu (0.1.5+git20240616212927.2dc0dc9.transition) transition; urgency=medium
+=======
+adaptation-xiaomi-vayu (0.1+4) sid; urgency=medium
+>>>>>>> cd7e9ad (Update: package name in debian/changelog)
 
   [ berbascum ]
   * Update needed files to build a deb without deps to transition to the new package
