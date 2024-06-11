@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 adaptation-droidian-vayu (0.1.5+git20240616212927.2dc0dc9.transition) transition; urgency=medium
 =======
 adaptation-xiaomi-vayu (0.1+4) sid; urgency=medium
@@ -40,6 +41,29 @@ adaptation-xiaomi-vayu (0.1+4) sid; urgency=medium
   * Update rules
   * Delete adaptation-vayu-configs.keyring-fix.service
   * Update rules
+=======
+adaptation-xiaomi-vayu (1+git20240611142610.0a74f76.droidian) trixie; urgency=medium
+
+  [ berbascum ]
+  * Add: Files LICENSE and initial README.md to the git root dir
+  * Upgrade: debian packaging files to "sparse dir" model
+  * Merge: debian compat file into debian control
+  * Move: adaptation specific dirs to the sparse dir
+  * Rename vayu sources.list and configure with the droidian-vayu organization
+  * Add new gpg pud key from new template creation
+  * Move sparse/lib to usr
+  * Add systemd services and wanted links
+  * Remove kernel image from debian/control deps
+  * Add: initial .gitignore
+  * Revert: sparse dir was renamed to pkg_rootfs, now is reverted
+  * Remove systemd wanted soft links from sparse dir
+  * Update: .gitignore
+  * Update: package name in debian/changelog
+  * Update: debian packaging .links and .dirs files with the systemd services info
+  * Update: arch to all in debian/control
+
+  [ vacuumbeef ]
+>>>>>>> f70e5db (Update: debian/changelog)
   * Create encryption-supported
   * changed unreleased to main
   * Delete encryption-supported
@@ -92,6 +116,49 @@ adaptation-xiaomi-vayu (0.1+4) sid; urgency=medium
   * removed ril_subscription as it will not work
 
   [ streescult ]
+<<<<<<< HEAD
+=======
+  * added encryption-supported file
+
+ -- berbascum <berbascum@ticv.cat>  Tue, 11 Jun 2024 16:26:10 +0200
+
+adaptation-xiaomi-vayu (0) trixie; urgency=medium
+
+  [ vacuumbeef ]
+  * Initial commit
+  * Delete README.md
+  * removed lxc dir
+  * added vayu.list
+  * added etc/apt into .dirs file
+  * changed version
+  * added key to keyring dir
+  * moved sources.list.d to usr/lib
+  * sourced gpg
+  * Update adaptation-vayu-configs.install
+  * Update adaptation-vayu-configs.dirs
+  * Update adaptation-vayu-configs.dirs
+  * Update adaptation-vayu-configs.dirs
+  * clock fix
+  * Create adaptation-vayu-configs.clock-pos-fix.service
+  * Update rules
+  * Update rules
+  * Update adaptation-vayu-configs.dirs
+  * Create adaptation-vayu-configs.keyboard-layout.service
+  * Update rules
+  * Create us.yaml
+  * Create ru.yaml
+  * Update us.yaml
+  * Delete ru.yaml
+  * Delete adaptation-vayu-configs.keyboard-layout.service
+  * Update rules
+  * Delete etc/skel/.local/share/squeekboard /keyboards directory
+  * Create adaptation-vayu-configs.keyring-fix.service
+  * Update rules
+  * Delete adaptation-vayu-configs.keyring-fix.service
+  * Update rules
+
+  [ streescult ]
+>>>>>>> f70e5db (Update: debian/changelog)
   * first commit
   * replaced lavender to vayu everywhere
   * moved dirs
@@ -99,7 +166,12 @@ adaptation-xiaomi-vayu (0.1+4) sid; urgency=medium
   * disabled services and gnome suspend
   * added batman
   * added batman
+<<<<<<< HEAD
   * added encryption-supported file
 
  -- berbascum <berbascum@ticv.cat>  Sun, 16 Jun 2024 23:29:27 +0200
+=======
+
+ -- vacuumbeef <51813411+vacuumbeef@users.noreply.github.com>  Fri, 19 May 2023 04:47:25 +0300
+>>>>>>> f70e5db (Update: debian/changelog)
 
