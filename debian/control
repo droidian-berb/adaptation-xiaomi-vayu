@@ -8,10 +8,11 @@ Standards-Version: 4.5.0.3
 Package: adaptation-droidian-vayu
 Architecture: all
 Depends: ${misc:Depends},
-Description: adapatation-vayu-meta
- vayu api30 adaptation metapackage
+Description: adaptation vayu deprecated
+ replaced by adaptation-xiaomi-vayu
 
 Package: adaptation-vayu-configs
 Architecture: all
 Depends: ${misc:Depends},
-Description: vayu's adaptation configs
+Description: adaptation configs vayu deprecated
+ replaced by adaptation-xiaomi-vayu-configs
