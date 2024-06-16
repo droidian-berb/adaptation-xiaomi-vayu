@@ -11,6 +11,11 @@ build-package-with-droidian-releng.sh
 !debian/adaptation-xiaomi-vayu.dirs
 !debian/adaptation-xiaomi-vayu.install
 !debian/adaptation-xiaomi-vayu.links
+debian/adaptation-droidian-vayu.substvars
+debian/adaptation-droidian-vayu/
+debian/adaptation-vayu-configs.substvars
+debian/adaptation-vayu-configs/
+out-adaptation-droidian-vayu/
 debian/.debhelper/
 debian/debhelper-build-stamp
 debian/adaptation-xiaomi-vayu/
