@@ -1,4 +1,38 @@
-adaptation-droidian-vayu (0.1.5+git20240616212927.2dc0dc9.transition) trixie; urgency=medium
+adaptation-xiaomi-vayu (2+git20240617054636.962cd88.sid) sid; urgency=medium
+
+  * Reduce bluebinder override sleep from 10 to 2 seconds
+  * Set HWCOMPOSER scale from 3 to 2.75
+
+ -- berbascum <berbascum@ticv.cat>  Mon, 17 Jun 2024 07:46:36 +0200
+
+adaptation-xiaomi-vayu (1) trixie; urgency=medium
+
+  * Update debian/changelog
+  * Add: Files LICENSE and initial README.md to the git root dir
+  * Upgrade: debian packaging files to "sparse dir" model
+  * Merge: debian compat file into debian control
+  * Rename vayu sources.list and configure with the droidian-vayu organization
+  * Add new gpg pud key from new template creation
+  * Move sparse/lib to usr
+  * Add systemd services and wanted links
+  * Remove kernel image from debian/control deps
+  * Add: initial .gitignore
+  * Revert: sparse dir was renamed to pkg_rootfs, now is reverted
+  * Remove systemd wanted soft links from sparse dir
+  * Update: .gitignore
+  * Update: package name in debian/changelog
+  * Update: debian packaging .links and .dirs files with the systemd services info
+  * Update: arch to all in debian/control
+  * Update: debian/changelog
+  * Revert: commit 0a74f76 changing again arch to arm64 in debian/control
+  * Update debian/changelog
+  * Add linux-bootimage dep in debian/control
+  * Update .gitignore
+  * Update: clean some previous solved conflict information in debian/control
+
+ -- berbascum <berbascum@ticv.cat>  Mon, 17 Jun 2024 00:48:11 +0200
+
+adaptation-xiaomi-vayu (0.1.5) trixie; urgency=medium
 
   [ berbascum ]
   * Update needed files to build a deb without deps to transition to the new package
@@ -36,5 +70,66 @@ adaptation-droidian-vayu (0.1.5+git20240616212927.2dc0dc9.transition) trixie; ur
   * Update rules
   * Delete adaptation-vayu-configs.keyring-fix.service
   * Update rules
- -- vacuumbeef <51813411+vacuumbeef@users.noreply.github.com>  Fri, 19 May 2023 04:47:25 +0300
+  * Create encryption-supported
+  * changed unreleased to main
+  * Delete encryption-supported
+  * Delete preferred-hostname
+  * Create preferred-hostname
+  * Delete encryption-supported
+  * Create adaptation-vayu-configs.encryption-fix.service
+  * Update rules
+  * Delete adaptation-vayu-configs.encryption-fix.service
+  * Update rules
+  * Create encryption-supported
+  * Delete encryption-supported
+  * changed copyright and added encryption-supported file
+  * Create adaptation-vayu-configs.keyring-fix.service
+  * Update rules
+  * Update adaptation-vayu-configs.keyring-fix.service
+  * Update adaptation-vayu-configs.keyring-fix.service
+  * Update adaptation-vayu-configs.keyring-fix.service
+  * Delete mixer_paths_overlay_static.xml
+  * changed changelog
+  * Update phoc.ini
+  * Update adaptation-vayu-configs.clock-pos-fix.service
+  * changed -d to -f
+  * Create ril_subscription.conf
+  * Update adaptation-vayu-configs.dirs
+  * Update adaptation-vayu-configs.dirs
+  * Delete etc/ofono directory
+  * Delete var/lib/batman directory
+  * Delete batman
+  * Delete governor
+  * Delete adaptation-vayu-configs.batman.service
+  * Update rules
+  * updates
+  * updates
+  * Delete debian/.debhelper/generated directory
+  * Removed clock-fix, added camera fix with postboot script, added droidian-camera to debian/control
+  * added droidian-perf service and script
+  * Update vayu-postboot.sh - delete tap-to-wake
+  * updated version
+  * Update adaptation-vayu-configs.vayu-postboot.service
+  * Changed postboot.service StartPre to 8 seconds
+  * Update adaptation-vayu-configs.vayu-postboot.service
+  * Update vayu.list
+  * Create mtp-supported
+  * Create adaptation-vayu-configs.torch-fix.service
+  * Update rules - add torch-fix
+  * created real torchlight fix
+  * added ofono ril_subscription.conf to switch on different sim slot
+  * added ofono ril_subscription.conf to switch on different sim slot
+  * removed ril_subscription as it will not work
+
+  [ streescult ]
+  * first commit
+  * replaced lavender to vayu everywhere
+  * moved dirs
+  * disabled services and gnome suspend
+  * disabled services and gnome suspend
+  * added batman
+  * added batman
+  * added encryption-supported file
+
+ -- berbascum <berbascum@ticv.cat>  Sun, 16 Jun 2024 23:29:27 +0200
 
