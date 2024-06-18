@@ -1,4 +1,11 @@
-adaptation-xiaomi-vayu (3+git20240617223049.7bd5f8d.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (4+git20240618211339.2322310.droidian) trixie; urgency=medium
+
+  * Update debian changelog
+  * Update: packade deps, some splitted from control to package-sideload-create.d/xiaomi-vayu
+
+ -- berbascum <berbascum@ticv.cat>  Tue, 18 Jun 2024 23:13:39 +0200
+
+adaptation-xiaomi-vayu (3) trixie; urgency=medium
 
   * Update debian changelog
   * Revert commit 1bfdf29 configuring again 10 seconds sleep on bluebinder service
