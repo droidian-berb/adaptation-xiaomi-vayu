@@ -1,4 +1,13 @@
-adaptation-xiaomi-vayu (2+git20240617054636.962cd88.sid) sid; urgency=medium
+adaptation-xiaomi-vayu (3+git20240617223049.7bd5f8d.droidian) trixie; urgency=medium
+
+  * Update debian changelog
+  * Revert commit 1bfdf29 configuring again 10 seconds sleep on bluebinder service
+  * Rename forgot adaptation dir droidian-vayu to xiaomi-vayu
+  * Add packacgesideload and preferences.d
+
+ -- berbascum <berbascum@ticv.cat>  Tue, 18 Jun 2024 00:30:49 +0200
+
+adaptation-xiaomi-vayu (2) trixie; urgency=medium
 
   * Reduce bluebinder override sleep from 10 to 2 seconds
   * Set HWCOMPOSER scale from 3 to 2.75
