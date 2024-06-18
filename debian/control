@@ -12,9 +12,8 @@ Depends: ${misc:Depends},
          adaptation-hybris-api30-phone,
 	 linux-bootimage-xiaomi-vayu,
          adaptation-xiaomi-vayu-configs,
-	 wlr-randr,
-	 droidian-camera,
-	 gstreamer1.0-tools,
+Conflicts: adaptation-droidian-vayu,
+           adaptation-vayu-configs,
 Description: Community adaptation for xiaomi-vayu api30 - metapackage
 
 Package: adaptation-xiaomi-vayu-configs
