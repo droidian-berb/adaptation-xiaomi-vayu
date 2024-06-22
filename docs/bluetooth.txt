@@ -1,0 +1,8 @@
+## Managing bluetooth from command line:
+- bluetoothcth
+  - power on/of
+  - scan on/of
+  - connect/pair/remove <mac_address_of_keyboard>
+  - discoverable on/off
+  - paired-devices
+- rfkill block/unblock bluetooth
