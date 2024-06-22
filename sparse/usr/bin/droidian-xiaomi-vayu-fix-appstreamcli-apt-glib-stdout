@@ -1,0 +1,9 @@
+#!/bin/sh
+
+## Patch 50appstream file to hide some glib errors from stdout when an apt-get update is permormed
+file_to_patch='/etc/apt/apt.conf.d/50appstream'
+pattern_search='then appstreamcli refresh --source=os > /dev/null \|\|'
+pattern_replace='then appstreamcli refresh --source=os > /dev/null 2>%1 \|\|'
+sed -i "s|$(echo "$pattern_search")|$(echo "$pattern_replace")|g" "${file_to_patch}"
+
+exit 0
