@@ -1,4 +1,15 @@
-adaptation-xiaomi-vayu (5+git20240619200006.d07dd62.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (6+git20240622112718.457f2af.droidian) trixie; urgency=medium
+
+  * Update debian changelog
+  * Fix: droidian-perf.sh exec permissions
+  * Fix: linux-image installation crashes caused by the GETPROP definition from flash-boootimage script
+  * Fix: when performing an apt-get update, some glib errors are sent to the stdout, so this fix will hide them
+  * Add: doc, with some bluetooth trouble info
+  * Update: systemd links
+
+ -- berbascum <berbascum@ticv.cat>  Sat, 22 Jun 2024 13:27:18 +0200
+
+adaptation-xiaomi-vayu (5) trixie; urgency=medium
 
   * Update debian changelog
   * Revert: commit 962cd88, setting phoc HWCOMPOSER scale to 3 again
