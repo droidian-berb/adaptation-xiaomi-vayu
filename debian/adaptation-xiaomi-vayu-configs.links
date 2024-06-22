@@ -2,9 +2,9 @@
 /usr/lib/adaptation-xiaomi-vayu/trusted.gpg.d/community-xiaomi-vayu.gpg /etc/apt/trusted.gpg.d/community-xiaomi-vayu.gpg
 /usr/lib/adaptation-xiaomi-vayu/preferences.d/30-xiaomi-vayu /etc/apt/preferences.d/30-xiaomi-vayu
 /usr/lib/adaptation-xiaomi-vayu/package-sideload-create.d/xiaomi-vayu /etc/package-sideload-create.d/xiaomi-vayu
-/etc/systemd/system/vayu-hide-appstreamcli-refresh-apt.service /etc/systemd/system/multi-user.target.wants/vayu-hide-appstreamcli-refresh-apt.service
 /etc/systemd/system/vayu-keyring-fix.service /etc/systemd/system/multi-user.target.wants/vayu-keyring-fix.service
 /etc/systemd/system/vayu-torch-force.service /etc/systemd/system/multi-user.target.wants/vayu-torch-force.service
-/etc/systemd/system/vayu-fix-getprop-flash-bootimage.service /etc/systemd/system/multi-user.target.wants/vayu-fix-getprop-flash-bootimage.service
 /etc/systemd/system/vayu-postboot.service /etc/systemd/system/multi-user.target.wants/vayu-postboot.service
 /etc/systemd/system/droidian-perf.service /etc/systemd/system/multi-user.target.wants/droidian-perf.service
+/etc/systemd/system/droidian-xiaomi-vayu-fix-getprop-flash-bootimage.service /etc/systemd/system/multi-user.target.wants/droidian-xiaomi-vayu-fix-getprop-flash-bootimage.service
+/etc/systemd/system/droidian-xiaomi-vayu-fix-hide-appstreamcli-refresh-apt.service /etc/systemd/system/multi-user.target.wants/droidian-xiaomi-vayu-fix-hide-appstreamcli-refresh-apt.service
