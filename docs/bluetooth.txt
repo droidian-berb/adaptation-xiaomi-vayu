@@ -1,3 +1,6 @@
+apt-get install bluez-tools
+
+
 ## Managing bluetooth from command line:
 - bluetoothcth
   - power on/of
@@ -6,3 +9,21 @@
   - discoverable on/off
   - paired-devices
 - rfkill block/unblock bluetooth
+
+
+btmgmt info
+
+# Debug
+- Check that a dir with the bt MAC addr i createn on /var/lib/bluetooth
+# Chech events when a bluetooth keyboard is cpnnected
+udevadm monitor --environment --udev
+
+## Auto restart bluetooth service
+sudo apt-get install inotify-tools
+#!/bin/bash
+inotifywait -m /sys/class/rfkill -e modify |
+while read path action file; do
+    echo "Config file ${file} changed, restarting Bluetooth service..."
+    sudo systemctl restart bluetooth
+done
+
