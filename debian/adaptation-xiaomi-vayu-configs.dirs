@@ -4,3 +4,4 @@
 /etc/apt/trusted.gpg.d
 /etc/systemd/system/multi-user.target.wants
 /var/lib/bluetooth
+/var/log/droidian-adaptation

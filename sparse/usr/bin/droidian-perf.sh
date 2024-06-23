@@ -1,5 +1,9 @@
 #!/bin/bash
 
+## Log
+ADAPTATION_LOG="/var/log/droidian-adaptation/droidian-adaptation-xiaomi-vayu.log"
+echo "$(date +'%Y-%m-%d %H:%M:%S') Executing droidian-perf.sh..." | tee -a "${ADAPTATION_LOG}"
+
 CORE_FIRST=$(awk '$1 == "processor" {print $3; exit}' /proc/cpuinfo)
 CORE_LAST=$(awk '$1 == "processor" {print $3}' /proc/cpuinfo | tail -1)
 

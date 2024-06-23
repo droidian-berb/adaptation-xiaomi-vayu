@@ -1,5 +1,9 @@
 #!/bin/bash
 
+## Log
+ADAPTATION_LOG="/var/log/droidian-adaptation/droidian-adaptation-xiaomi-vayu.log"
+echo "$(date +'%Y-%m-%d %H:%M:%S') Executing camera-hal-force..." | tee -a "${ADAPTATION_LOG}"
+
 waitforservice init.svc.camera_service
 
 sudo -u droidian bash -c "timeout 5s gst-launch-1.0 droidcamsrc camera_device=0 mode=2 ! tee name=t t. ! queue ! video/x-raw, width=1920, height=1080 ! videoconvert ! videoflip video-direction=auto ! fakesink"
