@@ -1,4 +1,13 @@
-adaptation-xiaomi-vayu (6+git20240622112718.457f2af.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (7+git20240623121632.7f8ec0a.droidian) trixie; urgency=medium
+
+  * Update: changelog
+  * Update: doc, bluetooth debug commands added
+  * New: service to monitor rfkill devices and autorestart the bluetooth service when a bluetoothctl process hung is detected
+  * Update systemd links file
+
+ -- berbascum <berbascum@ticv.cat>  Sun, 23 Jun 2024 14:16:32 +0200
+
+adaptation-xiaomi-vayu (6) trixie; urgency=medium
 
   * Update debian changelog
   * Fix: droidian-perf.sh exec permissions
