@@ -1,4 +1,15 @@
-adaptation-xiaomi-vayu (7+git20240623121632.7f8ec0a.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (8+git20240623215738.7d6fdfa.droidian) trixie; urgency=medium
+
+  * Update debian changelog
+  * Improve: Some improvements on fixes names, and enable an execution log for all script fixes
+  * Add adaptation logs dir to the debian dirs file
+  * New: Service to set the screen brightness to 50% after posh start
+  * Update: systemd links in debian links file
+  * Fix: error on the bluetooth inotify log name
+
+ -- berbascum <berbascum@ticv.cat>  Sun, 23 Jun 2024 23:57:38 +0200
+
+adaptation-xiaomi-vayu (7) trixie; urgency=medium
 
   * Update: changelog
   * Update: doc, bluetooth debug commands added
