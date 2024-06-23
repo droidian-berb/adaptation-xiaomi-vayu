@@ -1,0 +1,12 @@
+[Unit]
+Description=Fix brightness once phosh is started
+After=phosh.service
+Wants=phosh.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/droidian-berb-fix-phosh-brightness-xiaomi-vayu.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=graphical.target
