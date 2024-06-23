@@ -8,3 +8,4 @@
 /etc/systemd/system/droidian-perf.service /etc/systemd/system/multi-user.target.wants/droidian-perf.service
 /etc/systemd/system/droidian-xiaomi-vayu-fix-getprop-flash-bootimage.service /etc/systemd/system/multi-user.target.wants/droidian-xiaomi-vayu-fix-getprop-flash-bootimage.service
 /etc/systemd/system/droidian-xiaomi-vayu-fix-hide-appstreamcli-refresh-apt.service /etc/systemd/system/multi-user.target.wants/droidian-xiaomi-vayu-fix-hide-appstreamcli-refresh-apt.service
+/etc/systemd/system/droidian-berb-fix-bluetooth-inotify-autorestart.service /etc/systemd/system/multi-user.target.wants/droidian-berb-fix-bluetooth-inotify-autorestart.service
