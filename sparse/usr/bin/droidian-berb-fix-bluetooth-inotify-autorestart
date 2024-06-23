@@ -19,8 +19,7 @@ ADAPTATION_LOG="/var/log/droidian-adaptation/droidian-adaptation-bluetooth-inoti
 macs_file="/var/lib/bluetooth/inotify-macs.allow"
 
 fn_service_bluetooth_restart() {
-    echo "$(date +'%Y-%m-%d %H:%M:%S') Auto-restarting the bluetooth service..." \
-        | tee -a "${ADAPTATION_LOG}"
+    echo "$(date +'%Y-%m-%d %H:%M:%S') Auto-restarting the bluetooth service..." | tee -a "${ADAPTATION_LOG}"
     systemctl restart bluetooth.service
     sleep 2
     systemctl restart droidian-berb-fix-bluetooth-inotify-autorestart.service
