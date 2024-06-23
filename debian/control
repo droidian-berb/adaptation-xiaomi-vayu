@@ -12,6 +12,7 @@ Depends: ${misc:Depends},
          adaptation-hybris-api30-phone,
 	 linux-bootimage-xiaomi-vayu,
          adaptation-xiaomi-vayu-configs,
+         inotify-tools,
 Conflicts: adaptation-droidian-vayu,
            adaptation-vayu-configs,
 Description: Community adaptation for xiaomi-vayu api30 - metapackage

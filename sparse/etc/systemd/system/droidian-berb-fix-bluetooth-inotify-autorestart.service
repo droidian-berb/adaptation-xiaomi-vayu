@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor bluetooth rfkill events and restart the bluetooth service if the bluetoothctl process is hung
+After=bluetooth.service
+Wants=bluetooth.service
+
+[Service]
+ExecStart=/usr/bin/droidian-berb-fix-bluetooth-inotify-autorestart
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

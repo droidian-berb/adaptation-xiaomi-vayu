@@ -1,0 +1,56 @@
+#!/bin/bash
+                                                                                                                               
+# TOOT_VERSION 1.0.0.1                                                                                                               
+# Upstream-Name: bluetooth-inotify-autorestart
+# Source: https://github.com/droidian-adaptations-berb/bluetooth-inotify-autorestart
+#
+## Script service to monitor changes on rfkill devices and restart the bluetooth service if bluetoothctl is hung
+#
+# Copyright (C) 2024 Berbascum <berbascum@ticv.cat>
+# All rights reserved.
+#
+# BSD 3-Clause License
+
+
+## Dirs to check
+#arr_dirs=( "/var/lib/bluetooth" "/etc/bluetooth" "/sys/class/rfkill" )
+macs_file="/var/lib/bluetooth/inotify-macs.allow"
+
+fn_service_bluetooth_restart() {
+    echo "$(date +'%Y-%m-%d %H:%M:%S') Auto-restarting the bluetooth service..." \
+        | tee -a /var/log/bluetooth-inotify.log
+    systemctl restart bluetooth.service
+    sleep 2
+    systemctl restart droidian-berb-fix-bluetooth-inotify-autorestart.service
+}
+
+fn_mac_check() {
+    while IFS= read -r mac; do
+        if [ -z "$(bluetoothctl devices Connected)" ]; then
+            return 0
+        elif bluetoothctl devices Connected | grep -q "$mac"; then
+            return 0
+        fi
+    done < "${macs_file}"
+    return 1
+}
+
+## Check for events on rfkill devices
+inotifywait -m "/sys/class/rfkill"  |
+while read -r directory events filename; do
+    ## Check for bluetoothctl hang and restartbluetooth service if a hang is detected
+    sleep 2
+    timeout 6 bluetoothctl devices Connected
+    blue_timeout="$?"
+    if [ "${blue_timeout}" == "124" ]; then
+        fn_service_bluetooth_restart
+        break
+
+    elif [ -z "$(bluetoothctl devices Connected)" ]; then
+        fn_service_bluetooth_restart
+        break
+    elif fn_mac_check; then
+        fn_service_bluetooth_restart
+        break
+    fi
+done
