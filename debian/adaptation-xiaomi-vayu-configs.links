@@ -7,3 +7,6 @@
 /etc/systemd/system/vayu-postboot.service /etc/systemd/system/multi-user.target.wants/vayu-postboot.service
 /etc/systemd/system/droidian-perf.service /etc/systemd/system/multi-user.target.wants/droidian-perf.service
 /etc/systemd/system/droidian-berb-fix-bluetooth-inotify-autorestart.service /etc/systemd/system/multi-user.target.wants/droidian-berb-fix-bluetooth-inotify-autorestart.service
+/etc/systemd/system/droidian-berb-fix-flash-bootimage-xiaomi-vayu.service /etc/systemd/system/multi-user.target.wants/droidian-berb-fix-flash-bootimage-xiaomi-vayu.service
+/etc/systemd/system/droidian-berb-fix-phosh-brightness-xiaomi-vayu.service /etc/systemd/system/graphical.target.wants/droidian-berb-fix-phosh-brightness-xiaomi-vayu.service
+/etc/systemd/system/droidian-berb-fix-appstreamcli-apt-glib-stdout.service /etc/systemd/system/multi-user.target.wants/droidian-berb-fix-appstreamcli-apt-glib-stdout.service
