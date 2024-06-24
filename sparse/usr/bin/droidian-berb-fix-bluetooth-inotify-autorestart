@@ -12,7 +12,7 @@
 # BSD 3-Clause License
 
 ## Log
-ADAPTATION_LOG="/var/log/droidian-adaptation/droidian-adaptation-bluetooth-inotify-autorestart.log "
+ADAPTATION_LOG="/var/log/droidian-adaptation/droidian-adaptation-bluetooth-inotify-autorestart.log"
 
 ## Dirs to check
 #arr_dirs=( "/var/lib/bluetooth" "/etc/bluetooth" "/sys/class/rfkill" )
