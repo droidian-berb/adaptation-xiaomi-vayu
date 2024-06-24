@@ -1,0 +1,13 @@
+[Unit]
+Description=Fix to load before the squeekboard since takes to long time
+Requires=lxc@android.service
+After=network.target
+Before=graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/droidian-berb-fix-squeekboard-delayed
+RemainAfterExit=True
+
+[Install]
+WantedBy=multi-user.target
