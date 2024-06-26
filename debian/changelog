@@ -1,4 +1,14 @@
-adaptation-xiaomi-vayu (9+git20240624202817.fe1a3c1.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (10+git20240626140819.02549f7.droidian) trixie; urgency=medium
+
+  * Update: debian changelog
+  * Update: doc README.md
+  * Fix: some errors in README.md
+  * Update: Replace in flash-bootimage getting model_name using ro.product.vendor.device instead
+  * Update: doc README.md
+
+ -- berbascum <berbascum@ticv.cat>  Wed, 26 Jun 2024 16:08:19 +0200
+
+adaptation-xiaomi-vayu (9) trixie; urgency=medium
 
   * Update debian changelog
   * New: fix queekboard execution since is taking too long until it appears
