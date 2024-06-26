@@ -28,6 +28,8 @@ This service hides some glib error messages in stdout when appstreamcli is calle
 ### droidian-berb-fix-flash-bootimage-xiaomi-vayu.service
 Fixes a problem with the getprop binary in the flash-bootimage script that chashes the linux-bootimage installation if the auto flash is enabled in kernel-info.mk
 
+2024-06-26: (included in droidian10 adaptation) Since depending the vendor image used, different ro.product.vendor.model values are detected, so the ro.product.vendor.device property will be used instead. This update patches the flash-bootimage script to do it. Also update the FLASH_INFO_MODEL value in kernel-info.mk and rebuild the linux-image packages has been needed.
+
 ### droidian-berb-fix-phosh-brightness-xiaomi-vayu.service
-Sets the brightness to half after phosh is started since the device is booting with the value to 0
+Sets the brightness to half after phosh is started since the device is booting with the value to 200 (very low)
 
