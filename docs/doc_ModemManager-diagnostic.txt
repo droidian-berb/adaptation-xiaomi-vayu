@@ -1,0 +1,21 @@
+## Revisar logs
+journalctl -u ModemManager
+journalctl -u NetworkManager
+
+##ModemManager cmd
+mmcli -L
+mmcli -m 0
+unlocked i active: yes
+
+## NetworkManager cmd
+## Get modem state
+nmcli d show /ril_0
+
+## Get Connection info
+nmcli c show | grep -E "gsm|cdma" 
+
+## Manage mobile data connection
+nmcli con down id "Internet"
+nmcli con up id "Internet"
+
+
