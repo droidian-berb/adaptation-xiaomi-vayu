@@ -8,7 +8,7 @@ Before=graphical.target
 Type=oneshot
 Environment=LAUNCHED_BY_SYSTEMD=1
 ExecStartPre=/bin/sleep 1
-ExecStart=/usr/bin/droidian-berb-fix-appstreamcli-apt-glib-stdout
+ExecStart=/usr/bin/droidian-adapt-fix-appstreamcli-apt-glib-stdout.sh
 RemainAfterExit=True
 
 [Install]

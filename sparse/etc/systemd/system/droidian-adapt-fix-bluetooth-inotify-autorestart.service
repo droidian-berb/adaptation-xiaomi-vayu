@@ -4,7 +4,7 @@ After=bluetooth.service
 Wants=bluetooth.service
 
 [Service]
-ExecStart=/usr/bin/droidian-berb-fix-bluetooth-inotify-autorestart
+ExecStart=/usr/bin/droidian-adapt-fix-bluetooth-inotify-autorestart.sh
 Restart=on-failure
 
 [Install]

@@ -5,7 +5,7 @@ Wants=phosh.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/droidian-berb-fix-phosh-brightness-xiaomi-vayu.sh
+ExecStart=/usr/bin/droidian-adapt-fix-phosh-brightness-xiaomi-vayu.sh
 RemainAfterExit=true
 
 [Install]

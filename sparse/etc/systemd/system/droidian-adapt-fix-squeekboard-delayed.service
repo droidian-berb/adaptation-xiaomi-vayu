@@ -6,7 +6,7 @@ Before=graphical.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/droidian-berb-fix-squeekboard-delayed
+ExecStart=/usr/bin/droidian-adapt-fix-squeekboard-delayed.sh
 RemainAfterExit=True
 
 [Install]

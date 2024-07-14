@@ -5,7 +5,7 @@ After=phosh.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/droidian-adapt-fix-rmnet-con-delayed.sh 
+ExecStart=/usr/bin/droidian-adapt-fix-rmnet-con-delayed.sh
 
 RemainAfterExit=True
 
