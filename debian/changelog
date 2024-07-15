@@ -1,4 +1,20 @@
-adaptation-xiaomi-vayu (10+git20240626140819.02549f7.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (11+git20240714235252.df1b8bc.droidian) trixie; urgency=medium
+
+  * Add: doc file todo.txt
+  * Update debian changelog
+  * Remove: phosh clock margin-left from gtk-3.0/gtk.css skel since now is not needed
+  * Fix: service name on the disable command from droidian-keyring-fix.service file
+  * Improve: Ensure that the service vayu-keyring-fix.service is disabled in the first run
+  * Update doc: new doc with ModemManager diagnosis
+  * New fix: After SIM PIN unlock, the rmnet connection takes long time to be usable, this is fixed
+  * Fix typo: in droidian-berb-fix-bluetooth-inotify-autorestart
+  * Rename fixes: Standarize last fixes names
+  * Remove the apt repo files since
+  * Update systemd links
+
+ -- berbascum <berbascum@ticv.cat>  Mon, 15 Jul 2024 01:52:52 +0200
+
+adaptation-xiaomi-vayu (10) trixie; urgency=medium
 
   * Update: debian changelog
   * Update: doc README.md
