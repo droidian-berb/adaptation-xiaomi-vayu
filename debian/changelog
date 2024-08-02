@@ -1,4 +1,13 @@
-adaptation-xiaomi-vayu (11+git20240714235252.df1b8bc.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (12+git20240802161243.46627af.droidian) trixie; urgency=medium
+
+  * Update debian changelog
+  * Update doc: update service names in README.md
+  * Remove fix: appstream-cli fix to hide glib error
+  * Update linux image deps in debian control
+
+ -- berbascum <berbascum@ticv.cat>  Fri, 02 Aug 2024 18:12:43 +0200
+
+adaptation-xiaomi-vayu (11) trixie; urgency=medium
 
   * Add: doc file todo.txt
   * Update debian changelog
