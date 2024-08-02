@@ -10,12 +10,15 @@ Package: adaptation-xiaomi-vayu
 Architecture: arm64
 Depends: ${misc:Depends},
          adaptation-hybris-api30-phone,
-	 linux-bootimage-xiaomi-vayu,
          adaptation-xiaomi-vayu-configs,
+	 linux-bootimage-4.14-190-xiaomi-vayu,
+	 linux-image-4.14-190-xiaomi-vayu,
          inotify-tools,
 Conflicts: adaptation-droidian-vayu,
            adaptation-vayu-configs,
-Description: Community adaptation for xiaomi-vayu api30 - metapackage
+Breaks: adaptation-droidian-vayu,
+        adaptation-vayu-configs,
+Description: Community adaptation for xiaomi vayu api30 - metapackage
 
 Package: adaptation-xiaomi-vayu-configs
 Architecture: arm64
