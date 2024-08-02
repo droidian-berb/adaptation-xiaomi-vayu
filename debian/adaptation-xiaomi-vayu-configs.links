@@ -1,6 +1,3 @@
-/usr/lib/adaptation-xiaomi-vayu/sources.list.d/community-xiaomi-vayu.list /etc/apt/sources.list.d/community-xiaomi-vayu.list
-/usr/lib/adaptation-xiaomi-vayu/trusted.gpg.d/community-xiaomi-vayu.gpg /etc/apt/trusted.gpg.d/community-xiaomi-vayu.gpg
-/usr/lib/adaptation-xiaomi-vayu/preferences.d/30-xiaomi-vayu /etc/apt/preferences.d/30-xiaomi-vayu
 /usr/lib/adaptation-xiaomi-vayu/package-sideload-create.d/xiaomi-vayu /etc/package-sideload-create.d/xiaomi-vayu
 /etc/systemd/system/vayu-keyring-fix.service /etc/systemd/system/multi-user.target.wants/vayu-keyring-fix.service
 /etc/systemd/system/vayu-torch-force.service /etc/systemd/system/multi-user.target.wants/vayu-torch-force.service
