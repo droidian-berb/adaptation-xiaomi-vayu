@@ -1,4 +1,18 @@
-adaptation-xiaomi-vayu (13+git20240802174715.059ddfc.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (14+git20240815230534.34ca2cd.droidian) trixie; urgency=medium
+
+  * Update debian changelog
+  * Fix audio: audio hal was loading twice
+  * Update doc: todo.txt
+  * Revert: appstreamcli fix removal since is not really fixed
+  * (packaging) preinst: Create preinst script that checks for adaptation log dir
+  * Disable adapt-fix for appstreamcli glib error
+  * Update fix: rmnet connection delay
+  * Update fix: rmnet connection delay
+  * Remove fix: squeekboard avoid delay
+
+ -- berbascum <berbascum@ticv.cat>  Fri, 16 Aug 2024 01:05:34 +0200
+
+adaptation-xiaomi-vayu (13) trixie; urgency=medium
 
   * Update changelog
   * Clean some older links creation from debian packaging
