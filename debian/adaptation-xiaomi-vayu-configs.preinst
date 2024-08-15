@@ -1,0 +1,21 @@
+#!/bin/sh
+ 
+set -e
+ 
+MAIN_LOG_DIR="/var/log/droidian-adaptation"
+ 
+## Create log dir for adaptations if not yet exist
+[ -d "${MAIN_LOG_DIR}" ] || mkdir "${MAIN_LOG_DIR}"
+ 
+## Grant write permissions to the system group
+## to allow logging to the user session
+chown root:system "${MAIN_LOG_DIR}"
+chmod g+w "${MAIN_LOG_DIR}"
+## Grant write permis to existing logs too
+found_logs=$(find "${MAIN_LOG_DIR}" -name "*.log")
+if [ -n "${found_logs}" ]; then
+   chown root:system "${MAIN_LOG_DIR}"/*.log
+   chmod 664 "${MAIN_LOG_DIR}"/*.log
+fi
+ 
+exit 0
