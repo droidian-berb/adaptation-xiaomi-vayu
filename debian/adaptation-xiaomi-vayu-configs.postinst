@@ -1,0 +1,19 @@
+#!/bin/sh
+ 
+#set -e
+ 
+MAIN_LOG_DIR="/var/log/droidian-adaptation"
+
+## Revert squeekboard delay fix
+[ -e "/usr/bin/squeekboard2" -a ! -e "/usr/bin/squeekboard" ] \
+        && cp -av /usr/bin/squeekboard2 /usr/bin/squeekboard
+ 
+for profile in $(find /home -name ".profile"); do   
+    squeek_enabled=$(cat $profile | grep squeekboard2)
+    if [ -n "${squeek_enabled}" ]; then
+        sed -i '/## Call SqueekBoard/d' ${profile}
+        sed -i '/.*sleep 10 && .*squeekboard2.*/d' ${profile}
+    fi
+done
+
+exit 0
