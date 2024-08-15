@@ -38,9 +38,9 @@ while [ "${counter}" -le "18" ]; do
     echo "SIM status = ${sim_status}"
     if [ "${sim_status}" == "registered" ]; then
         echo "SIM registered, fixing the connection..." | tee -a "${ADAPTATION_LOG}"
-        nmcli con down id "${rmnet_apn}" >/dev/null | tee -a "${ADAPTATION_LOG}"
+        nmcli con down id "${rmnet_apn}" >> "${ADAPTATION_LOG}" 2>&1
         sleep 2
-        nmcli con up id "${rmnet_apn}"  | tee -a "${ADAPTATION_LOG}"
+        nmcli con up id "${rmnet_apn}" >> "${ADAPTATION_LOG}"  2>&1
         break
     fi
     counter=$((counter + 1))
