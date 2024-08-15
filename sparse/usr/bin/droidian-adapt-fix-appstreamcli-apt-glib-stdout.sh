@@ -8,6 +8,6 @@ echo "$(date +'%Y-%m-%d %H:%M:%S') Executing droidian-berb-fix-appstreamcli-apt-
 file_to_patch='/etc/apt/apt.conf.d/50appstream'
 pattern_search='then appstreamcli refresh --source=os > /dev/null \|\|'
 pattern_replace='then appstreamcli refresh --source=os > /dev/null 2>%1 \|\|'
-sed -i "s|$(echo "$pattern_search")|$(echo "$pattern_replace")|g" "${file_to_patch}"
+#sed -i "s|$(echo "$pattern_search")|$(echo "$pattern_replace")|g" "${file_to_patch}"
 
 exit 0
