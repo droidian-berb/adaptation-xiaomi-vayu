@@ -1,0 +1,9 @@
+[Unit]
+Description=Script run ealier in boot process
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/vayu-preboot.sh
+
+[Install]
+WantedBy=sysinit.target

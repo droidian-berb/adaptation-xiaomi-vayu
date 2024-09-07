@@ -2,6 +2,7 @@
 /etc/systemd/system/vayu-keyring-fix.service /etc/systemd/system/multi-user.target.wants/vayu-keyring-fix.service
 /etc/systemd/system/vayu-torch-force.service /etc/systemd/system/multi-user.target.wants/vayu-torch-force.service
 /etc/systemd/system/vayu-postboot.service /etc/systemd/system/multi-user.target.wants/vayu-postboot.service
+/etc/systemd/system/vayu-preboot.service /etc/systemd/system/sysinit.target.wants/vayu-preboot.service
 /etc/systemd/system/droidian-perf.service /etc/systemd/system/multi-user.target.wants/droidian-perf.service
 /etc/systemd/system/droidian-adapt-fix-bluetooth-inotify-autorestart.service /etc/systemd/system/multi-user.target.wants/droidian-adapt-fix-bluetooth-inotify-autorestart.service
 /etc/systemd/system/droidian-adapt-fix-phosh-brightness-xiaomi-vayu.service /etc/systemd/system/graphical.target.wants/droidian-adapt-fix-phosh-brightness-xiaomi-vayu.service
