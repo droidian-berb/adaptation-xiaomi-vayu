@@ -6,3 +6,4 @@
 /var/lib/bluetooth
 /etc/systemd/system/graphical.target.wants
 /var/log/droidian-adaptation
+/var/lib/droidian/phosh-notch
