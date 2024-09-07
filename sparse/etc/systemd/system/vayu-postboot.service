@@ -1,11 +1,11 @@
 [Unit]
-Description=Hacks that have to be applied on boot for vayu
+Description=Script run after multi-user.target
 Requires=lxc@android.service
 
 [Service]
 Type=oneshot
 Environment=LAUNCHED_BY_SYSTEMD=1
-ExecStartPre=/bin/sleep 10
+ExecStartPre=/bin/sleep 5
 ExecStart=/usr/bin/vayu-postboot.sh
 
 [Install]
