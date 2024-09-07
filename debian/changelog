@@ -1,4 +1,37 @@
-adaptation-xiaomi-vayu (14+git20240815230534.34ca2cd.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (15+git20240907214731.793b7a2.droidian) trixie; urgency=medium
+
+  * Update copyright: git and debian license files
+  * (packaging) control: Bump 4.14 vayu kernel from Arrow-190 to l4v3nx-314
+  * (packaging) control: Add some utils to Depends:
+  * Remove fix: patch for flash-bootimage no more needed
+  * Remove fix: patch for rmnet-delay no more needed
+  * (packaging) control: Add some utils to Depends from miatoll:
+  * (service) preboot: create service for running commands early
+  * (service) postboot: remove camera hal workaround
+  * (service) postboot: update description and reduce sleep 10 to 5
+  * (config) phosh: add halium phosh-notch, from miatoll
+  * (feedbackd) theme: implementation from miatoll
+  * (packaging) configs-dirs: remove apt related dirs since is not managed by adaptation
+  * (packaging) configs-dirs: add missing glib-2 schemas dir
+  * (service) ofono: first test version for sim slot autodetecion
+  * (packaging) configs-dirs: add missing sysinit.target.wants dir
+  * (ofono) improve: some fixes and workarounds for ofono from miatoll
+  * (phosh) wait: remove phosh.service.d/90-wait.conf workaround
+  * (service) droidian-perf: update the service script from lavender adaptation
+  * (droidian) device: create flashlightd-sysfs empty file
+  * (droidian) device: create droidian-camera.conf file
+  * (service) ofono: sim slot autodetecion script updates slot on 11-radio.conf too
+  * Update doc: README.md
+
+ -- berbascum <berbascum@ticv.cat>  Sat, 07 Sep 2024 23:47:31 +0200
+
+adaptation-xiaomi-vayu (14) trixie; urgency=medium
+
+  * Update debian changelog
+
+ -- berbascum <berbascum@ticv.cat>  Fri, 16 Aug 2024 01:38:30 +0200
+
+adaptation-xiaomi-vayu (14) testing; urgency=medium
 
   * Update debian changelog
   * Fix audio: audio hal was loading twice
