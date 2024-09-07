@@ -1,16 +1,7 @@
 # adaptation-xiaomi-vayu
 Package needed to boot Droidian on a Xiaomi Pocophone X3 Pro
 
-
 ## Fixes information
-
-### droidian-adapt-fix-squeekboard-delayed.service: Squeekboard takes too long to appear
-Squeekboard seems to be executed as a desktop link in /usr/share/applications (there is two destop links related: sm.puri.OSK0.desktop and sm.puri.Squeekboard.desktop)
-The problem is not a squeekboard related, is a problem with the phosh autostart applications which delays the executions too long.
-To solve the problem for squeekboard, the user .profiles found in all home dirs, are configured to call the binary.
-To avoid a crash when the desktop links are executed, the binary is renamed to squeekboard2
-
-If problems are detected, stop and disable the service droidian-adapt-fix-squeekboard-delayed.service
 
 ### droidian-adapt-fix-bluetooth-inotify-autorestart.service
 May happen that the bluetooth service hangs if the controller is managed from the Phosh GUI until the bluetooth service is restarted.
@@ -25,11 +16,14 @@ A log registry is writed every time the bluetooth service is autorestarted (/var
 ### droidian-adapt-fix-appstreamcli-apt-glib-stdout.service
 This service hides some glib error messages in stdout when appstreamcli is called by apt-update
 
-### droidian-adapt-fix-flash-bootimage-xiaomi-vayu.service
-Fixes a problem with the getprop binary in the flash-bootimage script that chashes the linux-bootimage installation if the auto flash is enabled in kernel-info.mk
-
-2024-06-26: (included in droidian10 adaptation) Since depending the vendor image used, different ro.product.vendor.model values are detected, so the ro.product.vendor.device property will be used instead. This update patches the flash-bootimage script to do it. Also update the FLASH_INFO_MODEL value in kernel-info.mk and rebuild the linux-image packages has been needed.
-
 ### droidian-adapt-fix-phosh-brightness-xiaomi-vayu.service
 Sets the brightness to half after phosh is started since the device is booting with the value to 200 (very low)
 
+### droidian-adapt-twk-ofono-qcom-single-sim-auto-selector.service
+Tries to detect and configure the active slot on dual sim qcom devices for single sim configuration.
+
+NOTE 1: Only tested on xiaomi vayu.
+NOTE 2: Service on testing phase.
+
+### droidian-perf.service
+Enable sched tune for cpus management
