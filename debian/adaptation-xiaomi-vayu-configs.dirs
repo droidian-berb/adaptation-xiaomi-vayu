@@ -7,3 +7,4 @@
 /usr/share/feedbackd/themes/
 /etc/environment.d
 /usr/share/glib-2.0/schemas
+/etc/systemd/system/sysinit.target.wants
