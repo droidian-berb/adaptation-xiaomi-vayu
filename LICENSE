@@ -1,13 +1,17 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: adaptation-xiaomi-vayu
-Source: https://github.com/droidian-vayu/adaptation-xiaomi-vayu
+Source: https://github.com/droidian-berb/adaptation-xiaomi-vayu
 
 Files: *
+Copyright: 2023 Bardia Moshiri <fakeshell@bardia.tech>
 Copyright: 2023 vacuumbeef <stresscult@disroot.org>
+Copyright: 2024 berbascum <berbascum@ticv.cat>
 License: BSD-3-clause
 
 Files: debian/*
+Copyright: 2023 Bardia Moshiri <fakeshell@bardia.tech>
 Copyright: 2023 vacuumbeef <stresscult@disroot.org>
+Copyright: 2024 berbascum <berbascum@ticv.cat>
 License: BSD-3-clause
 
 License: BSD-3-clause
