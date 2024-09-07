@@ -20,6 +20,7 @@ fn_set_single_sim_slot() {
     sed "s/ExpectSlots = slot./ExpectSlots = slot${slot_num}/g" -i /etc/ofono/binder.conf
     sed "s/^\[slot.\]/[slot${slot_num}]/g" -i /etc/ofono/binder.conf
     sed "s/^slot = ./slot = ${stack_num}/g" -i /etc/ofono/binder.conf
+    sed "s/\[slot.\]/[slot${slot_num}]/g" -i /etc/ofono/binder.d/11-radio.conf
 }
 
 ## Ckeck slots for sim
