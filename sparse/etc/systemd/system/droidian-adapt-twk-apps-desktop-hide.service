@@ -1,0 +1,14 @@
+[Unit]
+Description=Hide the specified app desktop links
+Requires=lxc@android.service
+After=graphical.target
+
+[Service]
+Type=oneshot
+Environment=LAUNCHED_BY_SYSTEMD=1
+ExecStartPre=/bin/sleep 1
+ExecStart=/usr/bin/droidian-adapt-twk-apps-desktop-hide.sh
+RemainAfterExit=False
+
+[Install]
+WantedBy=multi-user.target
