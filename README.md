@@ -1,9 +1,9 @@
-# adaptation-xiaomi-vayu
+## adaptation-xiaomi-vayu
 Package needed to boot Droidian on a Xiaomi Pocophone X3 Pro
 
-## Fixes information
+### Fixes information
 
-### droidian-adapt-fix-bluetooth-inotify-autorestart.service
+#### droidian-adapt-fix-bluetooth-inotify-autorestart.service
 May happen that the bluetooth service hangs if the controller is managed from the Phosh GUI until the bluetooth service is restarted.
 For this cases, this fix monitors the bluetooth service and auto-restart it when some event on rfkill devices is detected, and the bluetooth service is not responding. 
 
@@ -13,17 +13,24 @@ The service is enabled by default, if problems are detected, stop and disable th
 
 A log registry is writed every time the bluetooth service is autorestarted (/var/log/droidian-adaptation/droidian-adaptation-bluetooth-inotify-autorestart.log)
 
-### droidian-adapt-fix-appstreamcli-apt-glib-stdout.service
+#### droidian-adapt-fix-appstreamcli-apt-glib-stdout.service
 This service hides some glib error messages in stdout when appstreamcli is called by apt-update
 
-### droidian-adapt-fix-phosh-brightness-xiaomi-vayu.service
+#### droidian-adapt-fix-phosh-brightness-xiaomi-vayu.service
 Sets the brightness to half after phosh is started since the device is booting with the value to 200 (very low)
 
-### droidian-adapt-twk-ofono-qcom-single-sim-auto-selector.service
+### Tweaks information
+
+#### droidian-perf.service
+Enable sched tune for cpus management
+
+#### droidian-adapt-twk-ofono-qcom-single-sim-auto-selector.service
 Tries to detect and configure the active slot on dual sim qcom devices for single sim configuration.
 
 NOTE 1: Only tested on xiaomi vayu.
 NOTE 2: Service on testing phase.
 
-### droidian-perf.service
-Enable sched tune for cpus management
+#### droidian-adapt-twk-apps-desktop-hide.service
+Service that hides the specified app desktop links using NoDisplay=true
+
+Currently the links list can be edited in /usr/bin/droidian-adapt-twk-apps-desktop-hide.sh
