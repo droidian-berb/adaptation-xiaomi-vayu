@@ -1,4 +1,13 @@
-adaptation-xiaomi-vayu (16+git20240908140340.8724008.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (17+git20240908151635.9baab1a.droidian) trixie; urgency=medium
+
+  * Revert "(ofono) improve: some fixes and workarounds for ofono from miatoll"
+  * Revert "(service) ofono: sim slot autodetecion script updates slot on 11-radio.conf too"
+  * (packaging) changelog: add the last build file
+  * (deps) control: add xclip
+
+ -- berbascum <berbascum@ticv.cat>  Sun, 08 Sep 2024 17:16:35 +0200
+
+adaptation-xiaomi-vayu (16) testing; urgency=medium
 
   * (packaging) changelog: update
   * (script) droidian-perf: fix x permission
