@@ -1,4 +1,20 @@
-adaptation-xiaomi-vayu (17+git20240908151635.9baab1a.droidian) trixie; urgency=medium
+adaptation-xiaomi-vayu (18+git20240914141712.f700af5.droidian) trixie; urgency=medium
+
+  * (deps) control: replace xclip with wl-clipboard
+  * (deps) control: add cpulimit
+  * (packaging) changelog: add the last build file
+  * (deps) control: add vayu 314 kernel headers
+  * Set default scale to 2.25
+  * (deps) control: remove pre-depend on glib specific version not needed anymore
+  * (deps) control: add gnome-tweaks
+  * (deps) control: Add htop
+  * (gtk3) clock-css: set margin-left to 115px to get at camera left for scales 3 and 2.25
+  * (ofono) workaround: ModemManager waits for ofono in dbus
+  * (recomends) control: move droidian-restart-services-gtk3 from deps to recomends
+
+ -- berbascum <berbascum@ticv.cat>  Sat, 14 Sep 2024 16:17:12 +0200
+
+adaptation-xiaomi-vayu (17) testing; urgency=medium
 
   * Revert "(ofono) improve: some fixes and workarounds for ofono from miatoll"
   * Revert "(service) ofono: sim slot autodetecion script updates slot on 11-radio.conf too"
