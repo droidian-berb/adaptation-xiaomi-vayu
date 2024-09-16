@@ -1,0 +1,146 @@
+- Enable modules qcom NPX 
+CONFIG_NFC_NQ=y
+# CONFIG_NFC is not set
+# CONFIG_NFC_DIGITAL is not set
+# CONFIG_NFC_NCI is not set
+# Near Field Communication (NFC) devices
+# CONFIG_NFC_PN533 is not set
+# CONFIG_NFC_PN533_I2C is not set
+# CONFIG_NFC_NXP_NCI is not set
+# CONFIG_NFC_NXP_NCI_I2C is not set
+
+
+
+## 1- Understanding:
+      ## There are two needed components:
+         a- nfc android hal
+            * (fw, services(bin), services-conf(rc)
+            * If services loading fine, i expect to get:
+	      (according to:
+              /vendor/odm/etc/vintf/manifest_nfc.xml)
+	      * android.hardware.nfc@1.2::INfc/default
+	      * vendor.nxp.nxpnfc@1.0::INxpNfc/default
+	      * lshal 2>/dev/null | grep -i nfc
+
+         b- kernel driver
+	    - CONFIG_NFC_NQ=y
+	    - LOADED:
+	      * E nq-nci 2-0028: nqx_probe: 
+	      * probing NFCC NQxxx exited successfully
+         c- dtb
+	    ## Also dtb is involved
+	       * found an "ese" error:
+		 logcat | grep "nci"
+		     0 0 W nq-nci 2-0028:
+                     ese GPIO <OPTIONAL> error getting
+		     from OF node
+		     0 0 E nq-nci 2-0028:
+	             nqx_probe: ese gpio not provided
+		 - Solution:
+		   * Edit ../dts/qcom/.dtsi
+		     ( inside :&qupv3_se9_i2c { )
+		     uncomment line:
+		     //qcom,nq-esepwr = <&tlmm 42 0x00>;
+		 
+## 2- Diagnosis of hal services
+      1.1- Get logs
+
+      ~lshal 2>/dev/null | grep -i nfc
+      ~lshal 2>/dev/null | grep -i nxp
+      ~logcat | grep "nfc"
+      ~logcat | grep "nci"
+      ~logcat | grep "nq"
+      ~logcat | grep -i hwservicemanager
+      ~find /vendor/ -name "*nfc*"
+      ~grep -r "android.hardware.nfc" /vendor/
+      ~grep -r "vendor.nfc_hal_service" /vendor/
+
+
+## 3- HAL Diagnosis results:
+NOTE: FILE/DIR PERMISSIONS:
+* Files > root:root
+* Dirs > root:2000 
+      * Files involved:
+	* /vendor/bin/hw/android.hardware.nfc@1.2-service
+	  * Service binary file
+        * /vendor/etc/init/hw/init.nfc.rc
+          * Register:
+	    service vendor.nfc_hal_service
+          * Calls:
+	   /vendor/bin/hw/android.hardware.nfc@1.2-service
+	  * Condition:
+	    on boot && \
+	    property:ro.boot.product.hardware.sku=nfc \
+	    enable vendor.nfc_hal_service
+	    ** The current prop is "vayu"
+               getprop | grep "ro.boot.product.hardware.sku"
+               [ro.boot.product.hardware.sku]: [vayu]
+	       * workaround:
+	       * overlay rc file changing cond. to vayu
+		 - perms: -rw-r--r-- 1 root root
+        * /vendor/etc/init/android.hardware.nfc@1.2-service.rc
+	  * service vendor.nfc_hal_service
+	  * /vendor/bin/hw/android.hardware.nfc@1.2-service
+	  * SEEMS FINE
+        * /vendor/etc/vintf/manifest.xml
+	  * Should contain the names to register nfc
+	  * Are missing in the main manifest.xml
+	  * Found definitions in:
+	    * /vendor/odm/etc/vintf/manifest_nfc.xml
+	  * Workaround:
+	    * overlay /vendor/etc/vintf/manifest.xml by adding the hal definitions from /vendor/odm/etc/vintf/manifest_nfc.xml
+		/vendor/etc/vintf
+		perms: -rw-r--r-- 1 root root
+        * /vendor/odm/etc/permissions/sku_nfc
+	  * a few permissions files found
+	  * Overlay to /vendor/etc/permissions
+
+## 4- scan hal devices
+      binder-wait android.hardware.nfc@1.2::INfc/default
+      binder-wait vendor.nxp.nxpnfc@1.0::INxpNfc/default
+
+
+## 5- libnfc analysis:
+      * Collecting nfc device information
+        ## /vendor/etc/libnfc-nci.conf
+        - NFA_STORAGE="/data/nfc"
+        - SCREEN_OFF_POWER_STATE=1
+          # 0: power-off-sleep state; DEFAULT
+          # 1: full-power state
+          # 2: screen-off card-emulation
+	    ## (CE4/CE3/CE1 modes are used)
+        ## /vendor/etc/libnfc-nxp.conf
+        - XP_NFC_DEV_NODE="/dev/nq-nci"
+	- NXP_FW_NAME="libpn553_fw.so"
+      * So relevant information:
+	* nq nci pn553 nxp i2c(obtained from seome logs)
+
+## 6- nfcd.service  Diagnosis:
+      * Start a terminal
+        dbus-monitor --system "type='signal',interface='org.sailfishos.nfc.Adapter'"
+      * Start a second terminal
+      * Chech if powered on
+        busctl get-property org.sailfishos.nfc.daemon /nfc0 org.sailfishos.nfc.Adapter Powered
+      * Power on if needed
+        busctl set-property org.sailfishos.nfc.daemon /nfc0 org.neard.Adapter Powered b true
+      * Chech if powered on
+        busctl get-property org.sailfishos.nfc.daemon /nfc0 org.sailfishos.nfc.Adapter Powered
+      * List NFC services in dbus
+        dbus-send --system --dest=org.neard --print-reply --type=method_call / org.freedesktop.DBus.Introspectable.Introspect
+      * Get Adapters
+        dbus-send --system --dest=org.sailfishos.nfc.daemon / org.sailfishos.nfc.Daemon.GetAdapters
+      * Get Protocols
+        busctl get-property org.sailfishos.nfc.daemon /nfc0 org.neard.Adapter Protocols
+      * Start scan
+        busctl call org.sailfishos.nfc.daemon /nfc0 org.neard.Adapter StartPollLoop s "ALL"
+      * Get tags (nequired to be near a valit tag)
+        busctl call org.sailfishos.nfc.daemon /nfc0 org.sailfishos.nfc.Adapter GetTags
+	#### if ao 0, no tags detected
+
+
+
+## Additional info ## Not seems usefull?
+## Devices i2c
+apt-get install i2c-tools
+ls /dev/i2c-*
+sudo i2cdetect -y 1
