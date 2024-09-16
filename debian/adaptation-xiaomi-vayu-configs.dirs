@@ -4,7 +4,12 @@
 /etc/systemd/system/graphical.target.wants
 /var/log/droidian-adaptation
 /var/lib/droidian/phosh-notch
-/usr/share/feedbackd/themes/
+/usr/share/feedbackd/themes
 /etc/environment.d
 /usr/share/glib-2.0/schemas
 /etc/systemd/system/sysinit.target.wants
+/usr/lib/droid-vendor-overlay/etc
+/usr/lib/droid-vendor-overlay/etc/init
+/usr/lib/droid-vendor-overlay/etc/init/hw
+/usr/lib/droid-vendor-overlay/etc/vintf
+/usr/lib/droid-vendor-overlay/etc/permissions/sku_nfc
