@@ -9,6 +9,10 @@ CONFIG_NFC_NQ=y
 # CONFIG_NFC_NXP_NCI is not set
 # CONFIG_NFC_NXP_NCI_I2C is not set
 
+## TODO:
+ create mode 100644 android/vendor/odm/etc/passwd
+ create mode 100644 android/vendor/odm/etc/group
+android/vendor/odm/etc/permissions/sku_nfc 
 
 
 ## 1- Understanding:
