@@ -12,6 +12,8 @@
 /usr/lib/droid-vendor-overlay/etc/init
 /usr/lib/droid-vendor-overlay/etc/init/hw
 /usr/lib/droid-vendor-overlay/etc/vintf
+/usr/lib/droid-vendor-overlay/lib64
+/usr/lib/droid-vendor-overlay/lib
 /usr/lib/droid-vendor-overlay/etc/permissions/sku_nfc
 /usr/lib/systemd/system/ModemManager.service.d
 /etc/ofono/binder.d
