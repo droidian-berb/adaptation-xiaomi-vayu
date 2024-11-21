@@ -9,3 +9,8 @@
 /etc/systemd/system/droidian-adapt-fix-appstreamcli-apt-glib-stdout.service /etc/systemd/system/multi-user.target.wants/droidian-adapt-fix-appstreamcli-apt-glib-stdout.service
 /etc/systemd/system/droidian-adapt-twk-ofono-qcom-single-sim-auto-selector.service /etc/systemd/system/graphical.target.wants/droidian-adapt-twk-ofono-qcom-single-sim-auto-selector.service
 /etc/systemd/system/droidian-adapt-twk-apps-desktop-hide.service /etc/systemd/system/multi-user.target.wants/droidian-adapt-twk-apps-desktop-hide.service
+/android/vendor/lib64/egl/libGLESv1_CM_adreno.so /usr/lib/droid-vendor-overlay/lib64/libGLESv1_CM_adreno.so
+/android/system/lib64/libGLESv1_CM.so /usr/lib/droid-vendor-overlay/lib64/libGLESv1_CM.so
+/android/vendor/lib64/egl/libGLESv2_adreno.so /usr/lib/droid-vendor-overlay/lib64/libGLESv2_adreno.so
+/android/system/lib64/libGLESv2.so /usr/lib/droid-vendor-overlay/lib64/libGLESv2.so
+/android/system/lib64/libGLESv3.so usr/lib/droid-vendor-overlay/lib64/libGLESv3.so
