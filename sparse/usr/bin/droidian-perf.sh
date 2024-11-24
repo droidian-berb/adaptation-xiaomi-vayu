@@ -14,6 +14,7 @@ CORE_LAST=$(awk '$1 == "processor" {print $3}' /proc/cpuinfo | tail -1)
 for ((i=$CORE_FIRST; i<=$CORE_LAST; i++))
 do
    MAXFREQ=$(cat /sys/devices/system/cpu/cpu${i}/cpufreq/scaling_available_frequencies | awk '{print $NF}')
+   MAXFREQ_LOWER=$((MAXFREQ / 5 * 4))
    if [ -f "/var/lib/batman/default_cpu_governor" ]; then
       GOVERNOR=$(</var/lib/batman/default_cpu_governor)
    else
@@ -28,15 +29,17 @@ do
 
    if [ -d "/sys/devices/system/cpu/cpu${i}/cpufreq/$GOVERNOR" ]; then
       if [ -f "/sys/devices/system/cpu/cpu${i}/cpufreq/${GOVERNOR}/hispeed_freq" ]; then
-         echo "$MAXFREQ" > /sys/devices/system/cpu/cpu${i}/cpufreq/${GOVERNOR}/hispeed_freq
+         echo "$MAXFREQ_LOWER" > /sys/devices/system/cpu/cpu${i}/cpufreq/${GOVERNOR}/hispeed_freq
          echo -n "/sys/devices/system/cpu/cpu${i}/cpufreq/${GOVERNOR}/hispeed_freq "
-         echo "$MAXFREQ"
+         echo "$MAXFREQ_LOWER"
       fi
    fi
 done
 
 [ -f /sys/fs/cgroup/schedtune/schedtune.boost ] && echo 20 > /sys/fs/cgroup/schedtune/schedtune.boost # needs schedtune in kernel
 [ -f /sys/fs/cgroup/schedtune/schedtune.prefer_idle ] && echo 1 > /sys/fs/cgroup/schedtune/schedtune.prefer_idle # needs schedtune in kernel
+
+exit
 
 [ -f /sys/module/ged/parameters/ged_monitor_3D_fence_disable ] && echo 1 > /sys/module/ged/parameters/ged_monitor_3D_fence_disable # spotted on mt6769v
 [ -f /proc/sys/kernel/sched_autogroup_enabled ] && echo 0 > /proc/sys/kernel/sched_autogroup_enabled # spotted on sm7125 msm8996 sdm670 sdm845 sdm660
